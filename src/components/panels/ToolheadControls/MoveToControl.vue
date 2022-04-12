@@ -181,7 +181,6 @@ export default class MoveToControl extends Mixins(BaseMixin, ControlMixin) {
         }
 
         if (gcode !== '' && this.input.x.valid && this.input.y.valid && this.input.z.valid) {
-            console.log(gcode)
             this.$store.dispatch('server/addEvent', { message: gcode, type: 'command' })
             this.$socket.emit('printer.gcode.script', { script: gcode })
         }
