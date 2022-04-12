@@ -78,9 +78,9 @@ export default class MoveToInput extends Mixins(BaseMixin) {
 
     get errorMsg() {
         const errors = []
-        if (this.position === '') errors.push('Invalid!')
+        if (this.position === '') errors.push(this.$t('Panels.ToolheadControlPanel.Invalid'))
         if (parseFloat(this.position) > this.positionMax || parseFloat(this.position) < this.positionMin)
-            errors.push('Out of range')
+            errors.push(this.$t('Panels.ToolheadControlPanel.OutOfRange'))
 
         return errors
     }
